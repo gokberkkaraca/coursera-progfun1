@@ -22,7 +22,19 @@ object Main {
   /**
    * Exercise 2
    */
-    def balance(chars: List[Char]): Boolean = ???
+    def balance(chars: List[Char]): Boolean = {
+      def balanceCheck(acc: Int, chars: List[Char]): Int ={
+        if (chars.isEmpty || acc < 0)
+          acc
+        else if (chars.head == '(' )
+          balanceCheck(acc + 1, chars.tail)
+        else if (chars.head == ')')
+          balanceCheck(acc - 1, chars.tail)
+        else
+          balanceCheck(acc, chars.tail)
+      }
+      balanceCheck(0, chars) == 0
+    }
   
   /**
    * Exercise 3
