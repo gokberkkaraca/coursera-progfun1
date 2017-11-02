@@ -150,5 +150,19 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
-  def sentenceAnagrams(sentence: Sentence): List[Sentence] = ???
+  def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
+    def sentenceAnagramsHelper(sentenceOccur: Occurrences): List[Sentence] = sentenceOccur match {
+      case Nil => List(List())
+      case _ =>
+        val combs = combinations(sentenceOccur).filter(comb => comb.nonEmpty)
+        for (
+          comb <- combs;
+          word <- dictionaryByOccurrences.getOrElse(comb, Nil);
+          sentence <- sentenceAnagramsHelper(subtract(sentenceOccur, wordOccurrences(word)))
+        )
+          yield word :: sentence
+    }
+
+    sentenceAnagramsHelper(sentenceOccurrences(sentence))
+  }
 }
