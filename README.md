@@ -7,4 +7,4 @@ Solutions for weekly assignments of Functional Programming Principle in Scala co
 * [Programming Assignment: Functional Sets](https://github.com/gokberkkaraca/coursera-progfun1/tree/master/funsets)
 * [Programming Assignment: Object-Oriented Sets](https://github.com/gokberkkaraca/coursera-progfun1/tree/master/objsets)
 * [Programming Assignment: Huffman Coding](https://github.com/gokberkkaraca/coursera-progfun1/tree/master/patmat)
-* [Programming Assignment: Anagrams](https://github.com/gokberkkaraca/coursera-progfun1/tree/master/patmat)
+* [Programming Assignment: Anagrams](https://github.com/gokberkkaraca/coursera-progfun1/tree/master/forcomp)
